@@ -1,9 +1,12 @@
 package tests;
 
-import gui.MenuGUI;
+import gui.MainGUI;
 
 public class TestGUI {
     public static void main(String[] args) {
-        new MenuGUI();
+        MainGUI main = new MainGUI();
+        Thread thMain = new Thread(main);
+
+        thMain.start();
     }
 }

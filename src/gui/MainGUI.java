@@ -1,77 +1,37 @@
-
 package gui;
 
-import java.awt.BasicStroke;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GridLayout;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.WindowConstants;
 
-import ressources.configuration.SimConfig;
+import config.SimConfig;
+import moteur.carte.Carte;
 
-public class MainGUI extends JFrame {
-	SimConfig config = new SimConfig();
-	MenuUI menu = new MenuUI();
-	
-	public MainGUI() {
-		initFenetre();
-		
-	}
-	
-	private void initFenetre() {
-		int x = config.fenetre.getTailleX();
-		int y = config.fenetre.getTailleY();
-		
-		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		this.setLocation(config.fenetre.getX(),config.fenetre.getY());
-		JButton bouton = new JButton("Lancer");
-		bouton.setFocusable(false);
+public class MainGUI extends JFrame implements Runnable {
 
-		menu.add(bouton);
-		this.setContentPane(menu);
-		
-	
-		
-		
+    private Carte carte;
+    private PeindreCarte peindre;
 
-		
-		
-		this.setTitle("Menu UI");
-		this.setSize(x,y);
-		
-		
-		
-		
-		this.setVisible(true);
-		
-	
-	
-		
-		
-	}
-	
+    private PanelTest test;
 
-	
-	public SimConfig getConfig() {
-		return this.config;
-	}
+    public MainGUI() {
+        super();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        this.carte = new Carte(SimConfig.TAILLE_X, SimConfig.TAILLE_Y);
+        this.peindre = new PeindreCarte();
+        this.test = new PanelTest(carte, peindre);
 
-	public static void main(String argv[]) {
-		new MainGUI();
-	}
-    	
-    	
-    	
-    	
-    	
-    	
- }
-    
+        this.setContentPane(test);
 
+        this.setSize(SimConfig.TAILLE_X, SimConfig.TAILLE_Y);
+        this.setResizable(false);
+        this.setVisible(true);
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            this.test.repaint();
+        }
+    }
+
+}

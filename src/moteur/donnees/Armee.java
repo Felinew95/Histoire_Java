@@ -2,36 +2,40 @@ package moteur.donnees;
 
 /**
  * Classe qui représente une armée 
- * @author Massinissa
- * @version 1.0
+ * 
+ * @author Alexandre et Massinissa
+ * @version 1.1
  */
 public class Armee {
 
     // Attributs 
-    private String hersir;
+    private String hersir; // Chef de l'armée 
     private int nombreGuerriers;
     private int nombreNavires;
-    private int techniquesMilitaire;
+    private int techniquesMilitaire; // Nombre de techniques 
+    private float etat; // En pourcentage (0 à 100%)
     
     /**
      * Constructeur de la classe Armee
+     * 
      * @param nombreGuerriers : Nombre de guerriers 
      * @param nombreNavires : Nombre de navires 
      * @param chef : Chef principal de l'armée 
      * @param techniquesMilitaire : Nombre de techniques militaires acquises
      */
-    public Armee(String hersir, int nombreGuerriers, int nombreNavires, int techniquesMilitaire) {
+    public Armee(String hersir, int nombreGuerriers, int nombreNavires, int techniquesMilitaire, float etat) {
         this.hersir=hersir;
         this.nombreGuerriers=nombreGuerriers;
         this.nombreNavires=nombreNavires;
         this.techniquesMilitaire=techniquesMilitaire;
+        this.etat = etat;
     }
 
     /**
      * Getter de hersir
-     * @return
+     * @return le nom du hersir
      */
-    public String getHersir(){
+    public String getHersir() {
         return hersir;
     }
 
@@ -39,13 +43,13 @@ public class Armee {
      * Getter de nombreGuerriers
      * @return Le nombre de guerriers
      */
-    public int getNombreGuerriers(){
+    public int getNombreGuerriers() {
         return nombreGuerriers;
     }
     
     /**
      * Getter nombreNavires
-     * @return le nombre de navires
+     * @return Le nombre de navires
      */
     public int getNombreNavires() {
         return nombreNavires;
@@ -53,10 +57,18 @@ public class Armee {
 
     /**
      * Getter des techniquesmilitaire
-     * @return le nombre de techniquesmilitaire
+     * @return Le nombre de techniquesmilitaire
      */
     public int getTechniquesMilitaire() {
         return techniquesMilitaire;
+    }
+
+    /**
+     * Getter de etat
+     * @return L'état de l'armée
+     */
+    public float getEtat() {
+        return etat;
     }
     
     /**
@@ -85,34 +97,18 @@ public class Armee {
 
     /**
      * Setter de techniquesMilitaire
-     * @param hersir : le nombre de techniqueMilitaire acquises
+     * @param hersir : le nombre de techniques militaire acquises
      */
     public void setTechniquesMilitaire(int techniquesMilitaire) {
         this.techniquesMilitaire = techniquesMilitaire;
     }
 
     /**
-     * Ajoute des guerriers 
-     * @param nombre : Nombre de nouveaux guerriers 
+     * Setter de etat 
+     * @param etat : Nouvel état de l'armée 
      */
-    public void ajouterGuerriers(int nombre) {
-        this.nombreGuerriers+=nombre;
-    }
-
-    /**
-     * Ajoute des navires
-     * @param nombre : Nombre de nouveaux navires 
-     */
-    public void ajouterNavires(int nombre) {
-        this.nombreNavires+=nombre;
-    }
-    
-    /**
-     * Ajoute des techniques acquises
-     * @param nombre : Nombre de nouvelles techniques acquises 
-     */
-    public void ajouterTechniquesMilitaires(int nombre) {
-        this.techniquesMilitaire += nombre;
+    public void setEtat(float etat) {
+        this.etat = etat;
     }
 
     /**
@@ -123,7 +119,7 @@ public class Armee {
     public String toString() {
         return "Hersir : " + this.getHersir() + ", Nombre de guerriers : " + this.getNombreGuerriers() + 
             ", Nombre de navires : " + this.getNombreNavires() + ", Techniques militaire acquises : " + 
-            this.getTechniquesMilitaire();
+            this.getTechniquesMilitaire() + ", État : " + this.getEtat() + "%";
     }
 
 }
