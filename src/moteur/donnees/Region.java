@@ -1,5 +1,7 @@
 package moteur.donnees;
 
+import java.awt.Point;
+
 /**
  * Classe qui représente une région géographique
  * 
@@ -10,108 +12,78 @@ public class Region {
     
     // Attributs
     private String nom; // Nom de la région
-    private String croyance; // Croyance dominante dans la région
-    private float influence; // Influence de la région (0 à 100%)
-    
+    private Point position;
+    private String chef;
+
     /**
      * Constructeur de la classe Region
      * 
-     * @param nom : Nom de la région
-     * @param croyance : Croyance dominante
-     * @param influence : Influence de la région
+     * @param nom : Nom de la région 
+     * @param position : Position de la région 
+     * @param chef : Chef de la région
      */
-    public Region(String nom, String croyance, float influence) {
+    public Region(String nom, Point position, String chef) {
         this.nom = nom;
-        this.croyance = croyance;
-        this.influence = influence;
+        this.position = position;
+        this.chef = chef;
     }
-    
+
     /**
-     * Constructeur simplifié de la classe Region
-     * 
-     * @param nom : Nom de la région
-     */
-    public Region(String nom) {
-        this(nom, "Aucune", 50.0f);
-    }
-    
-    /**
-     * Getter de nom
-     * @return Le nom de la région
+     * Getter de nom 
+     * @return Le nom de la région 
      */
     public String getNom() {
         return nom;
     }
-    
+
     /**
-     * Getter de croyance
-     * @return La croyance dominante
+     * Getter de position 
+     * @return La position de la région 
      */
-    public String getCroyance() {
-        return croyance;
+    public Point getPosition() {
+        return position;
     }
-    
+
     /**
-     * Getter de influence
-     * @return L'influence de la région
+     * Getter de chef 
+     * @return Le chef de la région 
      */
-    public float getInfluence() {
-        return influence;
+    public String getChef() {
+        return chef;
     }
-    
+
     /**
-     * Setter de nom
-     * @param nom : Nouveau nom de la région
+     * Setter de nom 
+     * @param nom : Nouveau nom de la région 
      */
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
     /**
-     * Setter de croyance
-     * @param croyance : Nouvelle croyance
+     * Setter de position 
+     * @param position : Nouvelle position de la région
      */
-    public void setCroyance(String croyance) {
-        this.croyance = croyance;
+    public void setPosition(Point position) {
+        this.position = position;
     }
-    
+
     /**
-     * Setter de influence
-     * @param influence : Nouvelle influence
+     * Setter de chef 
+     * @param chef : Nouveau chef de la région 
      */
-    public void setInfluence(float influence) {
-        this.influence = influence;
+    public void setChef(String chef) {
+        this.chef = chef;
     }
-    
-    /**
-     * Augmente l'influence de la région
-     * @param valeur : Valeur à ajouter
-     */
-    public void augmenterInfluence(float valeur) {
-        this.influence += valeur;
-        if (this.influence > 100) {
-            this.influence = 100;
-        }
-    }
-    
-    /**
-     * Diminue l'influence de la région
-     * @param valeur : Valeur à retirer
-     */
-    public void diminuerInfluence(float valeur) {
-        this.influence -= valeur;
-        if (this.influence < 0) {
-            this.influence = 0;
-        }
-    }
-    
+
     /**
      * Affiche les informations de la région
-     * @return L'affichage des informations
+     * @return l'affichage des informations
      */
     @Override
     public String toString() {
-        return "Région : " + this.getNom() + ", Croyance : " + this.getCroyance() + 
-               ", Influence : " + this.getInfluence() + "%";
+        return "Nom : " + this.getNom() + ", Chef : " + this.getChef() + 
+            ", Position : " + this.getPosition();
     }
+
 }
