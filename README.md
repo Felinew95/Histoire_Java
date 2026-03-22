@@ -51,4 +51,5 @@ java -cp out gui.MainGUI
 ## Auteurs
 
 - Massinissa Lomani
-- Alexandre
+- Alexandre Burin
+- Tauseef Ahmed
