@@ -2,7 +2,7 @@
 
 Simulation de civilisations inspirée de l'univers viking, développée en Java avec interface graphique Swing. Chaque civilisation gère son économie, son armée, sa population, sa religion et ses relations diplomatiques sur une carte en 2D.
 
-> Projet académique réalisé en binôme — CY Cergy Paris Université (L2 Informatique)
+> Projet académique réalisé en trinôme — CY Cergy Paris Université (L2 Informatique)
 
 ---
 
