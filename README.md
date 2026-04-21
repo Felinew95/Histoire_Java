@@ -42,7 +42,7 @@ src/
 
 ## Lancer le projet
 
-# Option 2 : Via le Terminal
+### Option 2 : Via le Terminal
 
 ```bash
 # Compiler depuis le dossier src/
