@@ -42,6 +42,8 @@ src/
 
 ## Lancer le projet
 
+# Option 2 : Via le Terminal
+
 ```bash
 # Compiler depuis le dossier src/
 javac -d out $(find . -name "*.java")
