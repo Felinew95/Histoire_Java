@@ -42,6 +42,21 @@ src/
 
 ## Lancer le projet
 
+### Option 1 : Via l'IDE Eclipse
+
+Pour exécuter le projet dans l'IDE Eclipse, suivez ces étapes :
+1. Importer le projet :
+  - Créez un nouveau projet Java dans Eclipse en sélectionnant le JRE 1.8.
+  - Copiez le contenu du dossier src (téléchargé précédemment) et collez-le directement dans le dossier src de votre nouveau projet dans Eclipse.
+  - Configurer les librairies : Faites un clic droit sur le projet > Build Path > Add Libraries > User Library.
+  - Ajoutez les fichiers .jar requis (situés dans le dossier lib du projet).
+
+2. Configurer le JDK : Assurez-vous que le projet utilise bien JRE 1.8 (Clic droit sur le projet > Properties > Java Build Path > Libraries).
+
+3. Exécuter :
+  - Cherchez le fichier TestMainGUI.java situé dans le package tests.manuel.
+  - Faites un clic droit sur le fichier > Run As > Java Application
+
 ### Option 2 : Via le Terminal
 
 ```bash
