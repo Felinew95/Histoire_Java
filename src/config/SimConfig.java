@@ -124,11 +124,6 @@ public class SimConfig {
      * Année de début de la simulation
      */
     public static final int ANNEE_DEBUT_SIM = 780;
-    
-    /**
-     * Année de fin de la civilisation Viking
-     */
-    public static final int ANNEE_FIN_VIKINGS = 1060;
 
     /**
      * Année de fin de la simulation
