@@ -27,17 +27,17 @@ Simulation de civilisations inspirée de l'univers viking, développée en Java 
 
 ```
 src/
-├── config/            # Configuration de la simulation (taille carte, blocs)
-├── gui/               # Interface graphique (JFrame, panels, rendu carte)
-├── log/               # Pour les logs
+├── config/             # Configuration de la simulation (taille carte, blocs)
+├── gui/                # Interface graphique (JFrame, panels, rendu carte)
+├── log/                # Pour les logs
 ├── moteur/
-│   ├── carte/         # Carte et blocs
-│   ├── donnees/       # Civilisation, Armée, Population, Religion, Politique...
-│   │   └── economie/  # Économie, Produits, Ressources
-│   └── traitement/    # Construction des régions, polygones
-│       ├── builders   # Builders
-│       └── management # Managers 
-└── utilitaires/       # Utilitaires
+│   ├── carte/          # Carte et blocs
+│   ├── donnees/        # Civilisation, Armée, Population, Religion, Politique...
+│   │   └── economie/   # Économie, Produits, Ressources
+│   └── traitement/     # Construction des régions, polygones
+│       ├── builders/   # Builders
+│       └── management/ # Managers 
+└── utilitaires/        # Utilitaires
 ```
 
 ## Lancer le projet
